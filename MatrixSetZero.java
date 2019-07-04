@@ -6,14 +6,14 @@ public class Solution {
 		    for(int i=0;i<a.size();i++){
 		        for(int j=0;j<a.get(i).size();j++){
 		            if(a.get(i).get(j) ==0){
-		                x[i] =1;
-		                y[j] =1;
+		                x[i] =-1;
+		                y[j] =-1;
 		            }
 		        }
 		    }
 		     for(int i=0;i<a.size();i++){
 		        for(int j=0;j<a.get(i).size();j++){
-		            if(x[i] ==1 || y[j] ==1)
+		            if(x[i] ==-1 || y[j] ==-1)
 		              a.get(i).set(j,0);
 		        }         
 		   }
