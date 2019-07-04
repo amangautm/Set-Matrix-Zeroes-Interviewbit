@@ -1,40 +1,21 @@
 import java.util.*;
-public class MatrixSetZero {
-   public static void solve(int arr[][]){
-	   int x[] =new int[3];
-	   int y[] =new int[3];
-	   for(int i=0;i<3;i++){
-		   for(int j=0;j<3;j++){
-			   if(arr[i][j] ==0){
-				   x[i] =1;
-			       y[j] =1;
-			   }
+public class Solution {
+		public void setZeroes(ArrayList<ArrayList<Integer>> a) {
+		    int y[] =new int[a.get(0).size()];
+		    int x[] =new int[a.size()];
+		    for(int i=0;i<a.size();i++){
+		        for(int j=0;j<a.get(i).size();j++){
+		            if(a.get(i).get(j) ==0){
+		                x[i] =1;
+		                y[j] =1;
+		            }
+		        }
+		    }
+		     for(int i=0;i<a.size();i++){
+		        for(int j=0;j<a.get(i).size();j++){
+		            if(x[i] ==1 || y[j] ==1)
+		              a.get(i).set(j,0);
+		        }         
 		   }
-	   }
-	   for(int i=0;i<3;i++){
-		   for(int j=0;j<3;j++){
-			   if((x[i] ==1) || (y[j] ==1)){
-				 arr[i][j] =0;
-			   }
-		   }
-	   }
-   }
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner sc =new Scanner(System.in);
-        int a[][] =new int[3][3];
-        for(int i=0;i<3;i++){
-        	for(int j=0;j<3;j++){
-        		a[i][j] =sc.nextInt();
-        	}
-        }
-        solve(a);
-        for(int i=0;i<3;i++){
-        	for(int j=0;j<3;j++){
-        		System.out.print(a[i][j]+" ");
-        	}
-        	System.out.println();
-        }
+		}
 	}
-
-}
